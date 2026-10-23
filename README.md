@@ -1,8 +1,8 @@
-# SugammaRex
+# FRM Study Agent
 
 # Purpose
 
-This architecture serves as a study agent for SRNAs enrolled in Gonzaga University
+This architecture serves as a study agent for candidates preparing for the GARP Financial Risk Manager (FRM) exam
 
 # Repository Control Flow
 
@@ -12,8 +12,8 @@ test >> Main
 
 ``` 
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+git clone https://github.com/nislip/FRM-study-agent.git
+cd FRM-study-agent
 
 ```
 
@@ -21,8 +21,8 @@ cd YOUR-REPO
 
 - fetch downloads a list of branches from github
 - `checkout test` automatically creates a local test branch tracking origin/test
-- If there is no local `test` branch but a remote one exists, for example `origin/test` it will create a local `test` branch tracking the remote one then swirches to that.
-- To reduce ambiguity you can use `git switch -c test` to create a new branch and swithc to it in one step.
+- If there is no local `test` branch but a remote one exists, for example `origin/test` it will create a local `test` branch tracking the remote one then switches to that.
+- To reduce ambiguity you can use `git switch -c test` to create a new branch and switch to it in one step.
 
 ```
 
@@ -48,15 +48,15 @@ git push -u origin feature/my-change
 
 gh pr create --base test --head feature/my-change --title "My change" --body "What this does"
 
-gh pr create --base dev --head test --title "Promote test to dev" --body "Changes from test"
+gh pr create --base main --head test --title "Promote test to main" --body "Changes from test"
 
 ```
 
-5) Other useful commands commands
+5) Other useful commands
 
 - `-v` stands for verbose and makes it show the URLS, not just the names
 - `remote` is the remote repositories that your local repo is connected to along with their URLs
-- `origin` is the remote repo's name and `origin` is the default name that git gies the remote you cloned from
+- `origin` is the remote repo's name and `origin` is the default name that git gives the remote you cloned from
 
 ```
 

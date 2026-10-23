@@ -1,0 +1,20 @@
+---
+name: Enforce branch flow
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-source-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify source branch
+        run: |
+          BASE="${{ github.base_ref }}"
+          HEAD="${{ github.head_ref }}"
+          echo "PR: $HEAD -> $BASE"
+          if [ "$BASE" = "main" ] && [ "$HEAD" != "test" ]; then
+            echo "::error::Only 'test' can be merged into 'main'."
+            exit 1
+          fi
